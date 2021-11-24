@@ -1,0 +1,6 @@
+SELECT  e.ENAME,D.DNAME
+FROM EMP e,
+     DEPT d
+WHERE e.DEPTNO = d.DEPTNO;
+
+ 

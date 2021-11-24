@@ -1,0 +1,11 @@
+<html>
+
+
+<script>
+document.writeln(Math.sin(90));
+document.writeln(Math.cos(2));
+document.writeln(Math.log(1));
+</script>
+
+</body>
+</html>

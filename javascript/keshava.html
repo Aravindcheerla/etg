@@ -1,0 +1,26 @@
+<html>
+<head>
+<script>
+function emp(ID,Name,DOB,Mobile NO,Address,Course)
+{
+this.ID=ID;
+this.Name=Name;
+this.DOB=DOB;
+this.Mobile=Mobile;
+this.Address=Address;
+this.Course=Course;
+this.changeAddress=changeAddress;
+function changeAddress(otherAddress)
+{
+this.Address=otherAddress;
+} 
+}
+e=new emp(21254,"Shyam","26/06/1998",9912466482,"Mogalthur","JavaScript");
+document.write(" " +e.ID+" "+e.Name+" "+e.DOB+" "+e.Mobile No+" "+e.Address+" "+e.Course+);
+e.changeAddress(MGL);
+document.write("<br>"+e.ID+" "+e.Name+" "+e.DOB+" "+e.Mobile No++" "+e.Address+" "+e.Course+);
+</script> 
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,3 @@
+SELECT   e.ENAME,D.LOC
+FROM EMP e,
+     DEPT d

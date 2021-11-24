@@ -1,0 +1,3 @@
+Select ENAME
+from EMP
+WHERE SAL IN (800,950,3000,5000)

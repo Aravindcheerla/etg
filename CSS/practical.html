@@ -1,0 +1,137 @@
+<html>
+<body>
+<style>
+body {
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px;
+  Background-color:#A0DAA9;
+}
+
+div.elem-group {
+  margin: 20px 0;
+}
+h1{
+ background-color:;
+ text-align:center;
+  color: white;
+  font-size: 2.5em;
+  font-family: 'Nanum Gothic';
+  border-radius: 4px;
+  color:#BC243C;
+ }
+div.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+}
+
+label {
+  display: block;
+  font-family: 'Nanum Gothic';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+textarea {
+  height: 250px;
+}
+
+hr {
+  border: 1px dotted #ccc;
+}
+
+button {
+  height: 50px;
+  background: orange;
+  border: none;
+  color: white;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+</style>
+<h1>HOTEL BOOKING </h1>
+<form action="Booking" method="post">
+  <div class="elem-group">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="visitor_name" placeholder="Your Name" pattern=[A-Z\sa-z]{3,20} required>
+  </div>
+  <div class="elem-group">
+    <label for="email">Your E-mail</label>
+    <input type="email" id="email" name="visitor_email" placeholder="Your emailid" required>
+  </div>
+  <div class="elem-group">
+    <label for="phone">Your Phone</label>
+    <input type="tel" id="phone" name="visitor_phone" placeholder="your phone no" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+  </div>
+  <hr>
+ 
+  <div class="elem-group inlined">
+    <label for="checkin-date">Check-in Date</label>
+    <input type="date" id="checkin-date" name="checkin" required>
+  </div>
+  <div class="elem-group inlined">
+    <label for="checkout-date">Check-out Date</label>
+    <input type="date" id="checkout-date" name="checkout" required>
+  </div>
+  <div class="elem-group">
+    <label for="room-selection">Select Room Preference</label>
+    <select id="room-selection" name="room_preference" required>
+        <option value="adjacent">Single accomadation with AC</option>
+        <option value="adjacent">Single accomadation without AC</option>
+        <option value="adjacent">Double accomadation with AC</option>
+		<option value="adjacent">Double accomadation without AC</option>
+		<option value="adjacent">Extra Bed</option>
+		<option value="adjacent">Dormitory(6 persons)</option>
+		<option value="adjacent">Dormitory(12 persons)</option>
+		<option value="adjacent">Dormitory(20 persons)</option>
+    </select>
+  </div>
+  <hr>
+           Result : <br>
+            <input type="text" id="txtresult" name="TextBox3">
+            <br>
+   <input type="button" name="clickbtn" value="Display Result" onclick="calculate()"> <br> <br><hr>
+
+  
+</form>
+</body>
+<script type='text/javascript'>
+var prices={nothing:0,h1a:357,h1b:280.50,h2a:380}; //here are your hotel prices
+
+function calculate() {
+	date1= document.getElementById('checkin-date').value;
+	date2= document.getElementById('checkout-date').value ;
+    var time_difference = date2.getTime() - date1.getTime();  
+    var days = Math.round( ( time_difference ) / 86400 ); 
+	var obj = {"Single accomadation with AC":2000 , "Single accomadation without AC": 2500 ,"Double accomadation with AC": 5000,"Double accomadation without AC":4000,
+	"Extra Bed":500,"Dormitory(6 persons)":6000,"Dormitory(12 persons)":10000,"Dormitory(20 persons):20000};
+	
+    var result =  days * obj[ document.getElementById('room_preference').value ];
+    document.getElementById("result").value=sum
+}
+</script>
+</script>		
+</html>

@@ -1,0 +1,3 @@
+Select ENAME
+from EMP
+WHERE ENAME LIKE '%D'
